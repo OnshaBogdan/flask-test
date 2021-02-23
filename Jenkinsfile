@@ -4,9 +4,11 @@ pipeline {
         stage('build') {
             steps {
                 sh 'python --version'
-                sh 'pip3 install --upgrade pip'
-                sh 'pip3 install -r requirements.txt'
-                sh 'pip3 freeze'
+                sh 'python -m venv env'
+                sh 'source ./env/bin/activate'
+                sh 'python -m pip install --upgrade pip'
+                sh 'python -m pip install -r requirements.txt'
+                sh 'python -m pip freeze'
                 sh 'python app.py'
             }
         }
