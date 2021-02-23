@@ -3,7 +3,9 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                sh 'python -m pip install --user flask'
+                sh 'virtualenv .venv'
+                sh 'source .venv/bin/activate'
+                sh 'python -m pip install -r requirements.txt'
             }
         }
         stage('run') {
