@@ -3,13 +3,14 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                sh 'python --version'
-                sh 'python -m venv env'
-                sh 'sudo python -m pip install --upgrade pip'
-                sh 'sudo python -m pip install -r requirements.txt'
-                sh 'python -m pip freeze'
+                sh 'python -m pip install flask'
+            }
+        }
+        stage('run') {
+            steps {
                 sh 'python app.py'
             }
         }
     }
+}
 }
