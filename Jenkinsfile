@@ -1,5 +1,5 @@
 pipeline {
-    agent { docker { image 'python:3.9' } }
+    agent { docker { image 'python:3.7.2' } }
     stages {
         stage('build') {
             steps {
@@ -8,10 +8,12 @@ pipeline {
                 sh 'python -m pip install -r requirements.txt'
             }
         }
-        stage('run') {
+        stage('test') {
             steps {
-                sh 'python app.py'
+                sh 'python test.py'
             }
         }
     }
 }
+
+
