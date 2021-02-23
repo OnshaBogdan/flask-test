@@ -3,14 +3,14 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                sh 'virtualenv .venv'
-                sh 'source .venv/bin/activate'
-                sh 'python -m pip install -r requirements.txt'
+                sh 'sudo virtualenv .venv'
+                sh 'sudo source .venv/bin/activate'
+                sh 'sudo python -m pip install -r requirements.txt'
             }
         }
         stage('test') {
             steps {
-                sh 'python test.py'
+                sh 'sudo python test.py'
             }
         }
     }
