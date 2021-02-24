@@ -7,11 +7,7 @@ pipeline {
 
             }
         }
-        stage('test') {
-            steps {
-                sh 'sudo python test.py'
-            }
-        }
+
     }
 }
 
