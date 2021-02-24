@@ -4,9 +4,8 @@ pipeline {
         stage('build') {
             steps {
                 sh 'python --version'
-                withPythonEnv('python') {
-                    sh 'pip install -r requirements.txt'
-                }
+                sh 'sudo python -m pip install -r requirements.txt'
+
             }
         }
     }
