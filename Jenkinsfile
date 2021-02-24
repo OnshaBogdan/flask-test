@@ -4,9 +4,9 @@ pipeline {
         stage('build') {
             steps {
                 sh 'python --version'
-                sh 'sudo virtualenv .venv'
-                sh 'sudo source .venv/bin/activate'
-                sh 'sudo python -m pip install -r requirements.txt'
+                sh 'virtualenv .venv'
+                sh 'source .venv/bin/activate'
+                sh 'python -m pip install -r requirements.txt'
             }
         }
     }
