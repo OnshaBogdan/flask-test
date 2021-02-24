@@ -4,7 +4,9 @@ pipeline {
         stage('build') {
             steps {
                 sh 'python --version'
-                sh 'python -m pip install --user flask'
+                withPythonEnv('python') {
+                    sh 'pip install -r requirements.txt'
+                }
             }
         }
     }
