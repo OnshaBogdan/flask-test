@@ -13,6 +13,7 @@ pipeline {
             steps {
                 sh 'python --version'
                 withEnv(["HOME=${env.WORKSPACE}"]) {
+                    sh "pip install gunicorn"
                     sh "gunicorn -b 0.0.0.0:8000 app:app"
                 }
             }
